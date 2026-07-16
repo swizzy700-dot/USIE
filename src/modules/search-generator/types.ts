@@ -28,7 +28,13 @@ export type IndustryType =
   | 'early-stage-investors'
   | 'technology-investment-firms'
   | 'corporate-venture-capital'
-  | 'family-offices-technology';
+  | 'family-offices-technology'
+  | 'private-equity-technology'
+  | 'software-private-equity'
+  | 'ai-private-equity'
+  | 'growth-equity-software'
+  | 'enterprise-ai-investors'
+  | 'cloud-software-investors';
 
 export interface IndustryConfig {
   id: IndustryType;

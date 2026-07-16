@@ -13,7 +13,22 @@ export type IndustryType =
   | 'real-estate'
   | 'painting-contractor'
   | 'tree-service'
-  | 'general-contractor';
+  | 'general-contractor'
+  | 'venture-capital-firms'
+  | 'ai-venture-capital'
+  | 'software-venture-capital'
+  | 'enterprise-software-investors'
+  | 'saas-investors'
+  | 'artificial-intelligence-investors'
+  | 'machine-learning-investors'
+  | 'data-infrastructure-investors'
+  | 'cloud-computing-investors'
+  | 'developer-tools-investors'
+  | 'seed-investors'
+  | 'early-stage-investors'
+  | 'technology-investment-firms'
+  | 'corporate-venture-capital'
+  | 'family-offices-technology';
 
 export interface IndustryConfig {
   id: IndustryType;

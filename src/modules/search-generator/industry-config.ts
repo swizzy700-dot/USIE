@@ -260,14 +260,16 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
     id: 'venture-capital-firms',
     name: 'Venture Capital Firms',
     searchTerms: [
-      'venture capital firm',
-      'venture capital',
-      'vc firm',
-      'venture capital fund',
-      'venture capital portfolio',
-      'venture capital backed',
-      'vc startup funding',
-      'venture capital investment group'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'top',
@@ -279,20 +281,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'startup',
       'early stage'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'ai-venture-capital': {
     id: 'ai-venture-capital',
     name: 'AI Venture Capital',
     searchTerms: [
-      'ai venture capital',
-      'artificial intelligence venture capital',
-      'ai vc firm',
-      'ai startup funding',
-      'ai venture investor',
-      'artificial intelligence vc',
-      'machine learning venture capital',
-      'deep learning startup funding'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'specialized',
@@ -304,20 +308,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'early stage',
       'seed'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'software-venture-capital': {
     id: 'software-venture-capital',
     name: 'Software Venture Capital',
     searchTerms: [
-      'software venture capital',
-      'software vc firm',
-      'software startup funding',
-      'software venture investor',
-      'technology software capital',
-      'software company vc',
-      'enterprise software venture capital',
-      'saas venture capital'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'specialized',
@@ -329,20 +335,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'early stage',
       'seed'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'enterprise-software-investors': {
     id: 'enterprise-software-investors',
     name: 'Enterprise Software Investors',
     searchTerms: [
-      'enterprise software venture capital',
-      'b2b software vc',
-      'enterprise software funding',
-      'business software investor',
-      'enterprise saas venture',
-      'corporate software vc',
-      'enterprise technology investor',
-      'b2b saas funding'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'specialized',
@@ -354,20 +362,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'growth',
       'venture'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'saas-investors': {
     id: 'saas-investors',
     name: 'SaaS Investors',
     searchTerms: [
-      'saas venture capital',
-      'software as a service vc',
-      'saas funding',
-      'saas startup investment',
-      'cloud software vc',
-      'subscription software venture',
-      'b2b saas investor',
-      'saas growth equity'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'specialized',
@@ -379,20 +389,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'growth',
       'venture'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'artificial-intelligence-investors': {
     id: 'artificial-intelligence-investors',
     name: 'Artificial Intelligence Investors',
     searchTerms: [
-      'artificial intelligence venture capital',
-      'ai startup funding',
-      'ai venture investor',
-      'machine learning vc',
-      'deep learning startup funding',
-      'ai technology venture',
-      'artificial intelligence startup investor',
-      'ml venture capital'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'specialized',
@@ -404,20 +416,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'early stage',
       'seed'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'machine-learning-investors': {
     id: 'machine-learning-investors',
     name: 'Machine Learning Investors',
     searchTerms: [
-      'machine learning venture capital',
-      'ml startup funding',
-      'machine learning vc',
-      'deep learning startup investment',
-      'ai ml venture',
-      'ml technology funding',
-      'machine learning startup investor',
-      'deep learning vc'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'specialized',
@@ -429,20 +443,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'research',
       'early stage'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'data-infrastructure-investors': {
     id: 'data-infrastructure-investors',
     name: 'Data Infrastructure Investors',
     searchTerms: [
-      'data infrastructure venture capital',
-      'data center vc',
-      'infrastructure funding',
-      'data platform venture',
-      'cloud infrastructure investor',
-      'data engineering startup funding',
-      'big data infrastructure vc',
-      'data storage venture capital'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'specialized',
@@ -460,14 +476,16 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
     id: 'cloud-computing-investors',
     name: 'Cloud Computing Investors',
     searchTerms: [
-      'cloud computing venture capital',
-      'cloud infrastructure vc',
-      'cloud services funding',
-      'cloud startup investment',
-      'saas cloud venture',
-      'cloud platform vc',
-      'infrastructure as a service investor',
-      'cloud software venture capital'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'specialized',
@@ -479,20 +497,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'growth',
       'venture'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'developer-tools-investors': {
     id: 'developer-tools-investors',
     name: 'Developer Tools Investors',
     searchTerms: [
-      'developer tools venture capital',
-      'devtools funding',
-      'developer platform vc',
-      'software development tools venture',
-      'devops startup funding',
-      'coding tools venture capital',
-      'developer experience investor',
-      'api tools vc'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'specialized',
@@ -504,20 +524,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'early stage',
       'venture'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'seed-investors': {
     id: 'seed-investors',
     name: 'Seed Investors',
     searchTerms: [
-      'seed venture capital',
-      'seed funding',
-      'seed capital',
-      'seed round investor',
-      'early stage seed funding',
-      'seed startup investment',
-      'pre-seed venture capital',
-      'angel seed funding'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'early stage',
@@ -529,20 +551,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'pre-seed',
       'vc'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'early-stage-investors': {
     id: 'early-stage-investors',
     name: 'Early-Stage Investors',
     searchTerms: [
-      'early stage venture capital',
-      'series a investor',
-      'early startup funding',
-      'early stage venture',
-      'pre-series a funding',
-      'early stage startup investor',
-      'seed to series a venture',
-      'early stage technology vc'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'early stage',
@@ -554,20 +578,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'series a',
       'technology'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'technology-investment-firms': {
     id: 'technology-investment-firms',
     name: 'Technology Investment Firms',
     searchTerms: [
-      'technology venture capital',
-      'tech investment firm',
-      'technology venture firm',
-      'tech capital firm',
-      'technology investment fund',
-      'tech startup investment',
-      'digital technology vc',
-      'tech growth equity'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'leading',
@@ -579,20 +605,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'venture',
       'startup'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'corporate-venture-capital': {
     id: 'corporate-venture-capital',
     name: 'Corporate Venture Capital',
     searchTerms: [
-      'corporate venture capital',
-      'cvc firm',
-      'corporate investment arm',
-      'corporate venture fund',
-      'strategic investment',
-      'corporate startup investment',
-      'strategic venture capital',
-      'corporate innovation vc'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'strategic',
@@ -604,20 +632,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'growth',
       'startup'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'family-offices-technology': {
     id: 'family-offices-technology',
     name: 'Family Offices (Technology Investments)',
     searchTerms: [
-      'family office technology venture capital',
-      'family office tech investor',
-      'family venture capital',
-      'family office startup investment',
-      'family office technology fund',
-      'multi-family office tech vc',
-      'single family office venture',
-      'family office direct investment'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'family',
@@ -629,20 +659,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'startup',
       'venture'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'private-equity-technology': {
     id: 'private-equity-technology',
     name: 'Private Equity Technology Firms',
     searchTerms: [
-      'technology private equity',
-      'tech pe firm',
-      'technology buyout firm',
-      'tech growth equity',
-      'technology investment firm',
-      'software private equity',
-      'tech pe fund',
-      'technology growth capital'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'private equity',
@@ -654,20 +686,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'investment',
       'firm'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'software-private-equity': {
     id: 'software-private-equity',
     name: 'Software Private Equity Firms',
     searchTerms: [
-      'software private equity',
-      'software pe firm',
-      'software buyout',
-      'software growth equity',
-      'saas private equity',
-      'software investment firm',
-      'technology software pe',
-      'enterprise software private equity'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'private equity',
@@ -679,20 +713,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'saas',
       'enterprise'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'ai-private-equity': {
     id: 'ai-private-equity',
     name: 'AI Private Equity Firms',
     searchTerms: [
-      'artificial intelligence private equity',
-      'ai pe firm',
-      'machine learning private equity',
-      'ai buyout firm',
-      'technology ai private equity',
-      'ai growth equity',
-      'deep learning private equity',
-      'ai software private equity'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'private equity',
@@ -704,20 +740,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'technology',
       'machine learning'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'growth-equity-software': {
     id: 'growth-equity-software',
     name: 'Growth Equity Software Firms',
     searchTerms: [
-      'software growth equity',
-      'saas growth equity',
-      'technology growth capital',
-      'software growth firm',
-      'enterprise software growth equity',
-      'b2b software growth capital',
-      'software expansion capital',
-      'saas growth investment'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'growth equity',
@@ -729,20 +767,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'saas',
       'enterprise'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'enterprise-ai-investors': {
     id: 'enterprise-ai-investors',
     name: 'Enterprise AI Investors',
     searchTerms: [
-      'enterprise artificial intelligence venture capital',
-      'enterprise ai investor',
-      'b2b ai funding',
-      'enterprise ai venture',
-      'business ai investment',
-      'corporate ai vc',
-      'enterprise machine learning investor',
-      'b2b ai startup funding'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'enterprise',
@@ -754,20 +794,22 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'corporate',
       'machine learning'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
   'cloud-software-investors': {
     id: 'cloud-software-investors',
     name: 'Cloud Software Investors',
     searchTerms: [
-      'cloud software venture capital',
-      'cloud software investor',
-      'saas cloud funding',
-      'cloud software vc',
-      'infrastructure as a service venture',
-      'cloud platform investor',
-      'software as a service cloud vc',
-      'cloud technology venture capital'
+      'Private Equity Firms',
+      'Venture Capital Firms',
+      'Venture Capital',
+      'Private Equity',
+      'Technology Venture Capital',
+      'AI Venture Capital',
+      'Software Venture Capital',
+      'Enterprise Software Investors',
+      'B2B Software Investors',
+      'Growth Equity Firms'
     ],
     modifiers: [
       'cloud',
@@ -779,7 +821,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'infrastructure',
       'platform'
     ],
-    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage']
+    excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   }
 };
 

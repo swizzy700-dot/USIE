@@ -51,6 +51,43 @@ export class SearchGeneratorService {
   }
 
   /**
+   * Replace generic industry labels with specific investor-focused labels
+   */
+  private replaceIndustryLabel(industryLabel: string): string {
+    const lowerLabel = industryLabel.toLowerCase();
+    
+    // Check for generic terms that need replacement
+    if (lowerLabel.includes('investor') || lowerLabel.includes('investment') || 
+        lowerLabel.includes('investment services') || lowerLabel.includes('financial services')) {
+      
+      // Replace with specific labels based on context
+      if (lowerLabel.includes('enterprise software') || lowerLabel.includes('b2b software')) {
+        if (lowerLabel.includes('ai') || lowerLabel.includes('artificial intelligence')) {
+          return 'AI Venture Capital';
+        } else if (lowerLabel.includes('software') || lowerLabel.includes('saas')) {
+          return 'Software Venture Capital';
+        } else {
+          return 'Venture Capital Firm';
+        }
+      } else if (lowerLabel.includes('ai') || lowerLabel.includes('artificial intelligence')) {
+        return 'AI Venture Capital';
+      } else if (lowerLabel.includes('software') || lowerLabel.includes('saas')) {
+        return 'Software Venture Capital';
+      } else if (lowerLabel.includes('growth') || lowerLabel.includes('equity')) {
+        return 'Growth Equity Firm';
+      } else if (lowerLabel.includes('technology') || lowerLabel.includes('tech')) {
+        return 'Technology Venture Capital';
+      } else {
+        // Default to Private Equity for generic investment terms
+        return 'Private Equity Firm';
+      }
+    }
+    
+    // Return original if no replacement needed
+    return industryLabel;
+  }
+
+  /**
    * Generate search targets based on request parameters
    */
   async generateSearchTargets(request: SearchGenerationRequest): Promise<SearchTarget[]> {
@@ -123,7 +160,7 @@ export class SearchGeneratorService {
 
         const target: SearchTarget = {
           id: searchId,
-          industry: industryConfig.name,
+          industry: this.replaceIndustryLabel(industryConfig.name),
           city: request.city,
           state: request.state,
           zip: zip.zip,

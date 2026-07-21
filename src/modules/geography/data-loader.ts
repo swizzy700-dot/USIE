@@ -163,36 +163,22 @@ export class GeographyDataLoader {
   // Generator function for counties - memory efficient
   private *generateCounties(): Generator<County> {
     const countyData: Array<[string, string, string, string, number, number]> = [
-      // California counties
-      ['06037', '06', 'Los Angeles County', 'CA', 10001040, 4060],
-      ['06073', '06', 'San Diego County', 'CA', 3328159, 4204],
-      ['06075', '06', 'San Francisco County', 'CA', 873965, 47],
-      ['06085', '06', 'Santa Clara County', 'CA', 1927614, 1291],
-      ['06001', '06', 'Alameda County', 'CA', 1671329, 739],
-      ['06059', '06', 'Orange County', 'CA', 3175692, 790],
-      ['06085', '06', 'Santa Clara County', 'CA', 1927614, 1291],
-      ['06081', '06', 'San Mateo County', 'CA', 764868, 448],
-      ['53033', '06', 'King County', 'WA', 2299646, 2126],
-      ['37183', '37', 'Wake County', 'NC', 1028877, 857],
-      ['27053', '27', 'Hennepin County', 'MN', 1262548, 557],
-      ['47117', '47', 'Davidson County', 'TN', 715422, 503],
-      ['41051', '41', 'Multnomah County', 'OR', 819523, 431],
-      ['49035', '49', 'Salt Lake County', 'UT', 1195854, 742],
-      ['51013', '51', 'Arlington County', 'VA', 239528, 26],
-      ['51003', '51', 'Alexandria City', 'VA', 159467, 15],
-      ['24031', '24', 'Montgomery County', 'MD', 1065412, 491],
-      // Texas counties
-      ['48201', '48', 'Harris County', 'TX', 4731345, 1704],
-      ['48113', '48', 'Dallas County', 'TX', 2635516, 879],
-      ['48439', '48', 'Tarrant County', 'TX', 2154835, 864],
-      ['48157', '48', 'Bexar County', 'TX', 2003554, 1247],
-      // New York counties
-      ['36061', '36', 'Kings County', 'NY', 2746054, 70],
-      ['36081', '36', 'Queens County', 'NY', 2405464, 109],
-      ['36047', '36', 'New York County', 'NY', 1694202, 23],
-      // Florida counties
-      ['12086', '12', 'Miami-Dade County', 'FL', 2704160, 1946],
-      ['12095', '12', 'Orange County', 'FL', 1393432, 903],
+      // Counties for 15 top investment hubs
+      ['36061', '36', 'New York County', 'NY', 1694202, 23], // New York City
+      ['06075', '06', 'San Francisco County', 'CA', 873965, 47], // San Francisco
+      ['25025', '25', 'Suffolk County', 'MA', 684379, 48], // Boston
+      ['06037', '06', 'Los Angeles County', 'CA', 10001040, 4060], // Los Angeles
+      ['48453', '48', 'Travis County', 'TX', 974447, 297], // Austin
+      ['53033', '53', 'King County', 'WA', 2299646, 2126], // Seattle
+      ['17031', '17', 'Cook County', 'IL', 2746388, 234], // Chicago
+      ['12086', '12', 'Miami-Dade County', 'FL', 2704160, 1946], // Miami
+      ['11001', '11', 'District of Columbia', 'DC', 689545, 61], // Washington DC
+      ['06085', '06', 'Santa Clara County', 'CA', 1927614, 1291], // San Jose
+      ['06085', '06', 'Santa Clara County', 'CA', 1927614, 1291], // Palo Alto
+      ['06085', '06', 'Santa Clara County', 'CA', 1927614, 1291], // Menlo Park
+      ['48113', '48', 'Dallas County', 'TX', 2635516, 879], // Dallas
+      ['13121', '13', 'Fulton County', 'GA', 498715, 134], // Atlanta
+      ['09001', '09', 'Fairfield County', 'CT', 62976, 48], // Greenwich
     ];
 
     for (const [fips, stateFips, name, state, population, area] of countyData) {
@@ -209,91 +195,25 @@ export class GeographyDataLoader {
   }
 
   // Generator function for cities - memory efficient
-  // PRIORITIZED: Major investor and business hubs first, then secondary cities
+  // PRIORITIZED: 15 top investor hubs with highest VC/PE concentration
   private *generateCities(): Generator<City> {
     const cityData: Array<[string, string, string, string, number, number, number, number, boolean, string]> = [
-      // TIER 1: Major Venture Capital & Private Equity Hubs
+      // TOP 15 INVESTMENT HUBS
       ['new-york-ny', 'New York', 'NY', '36061', 8419600, 303, 40.7128, -74.0060, true, 'New York-Newark-Jersey City, NY-NJ-PA'],
       ['san-francisco-ca', 'San Francisco', 'CA', '06075', 808437, 47, 37.7749, -122.4194, true, 'San Francisco-Oakland-Hayward, CA'],
       ['boston-ma', 'Boston', 'MA', '25025', 684379, 48, 42.3601, -71.0589, true, 'Boston-Cambridge-Newton, MA-NH'],
-      ['palo-alto-ca', 'Palo Alto', 'CA', '06085', 66666, 10, 37.4419, -122.1430, true, 'San Jose-Sunnyvale-Santa Clara, CA'],
-      ['menlo-park-ca', 'Menlo Park', 'CA', '06085', 33880, 10, 37.4529, -122.1817, true, 'San Jose-Sunnyvale-Santa Clara, CA'],
-      ['mountain-view-ca', 'Mountain View', 'CA', '06085', 82377, 12, 37.3861, -122.0839, true, 'San Jose-Sunnyvale-Santa Clara, CA'],
-      ['sunnyvale-ca', 'Sunnyvale', 'CA', '06085', 155805, 22, 37.3688, -122.0363, true, 'San Jose-Sunnyvale-Santa Clara, CA'],
-      ['san-jose-ca', 'San Jose', 'CA', '06085', 1021795, 178, 37.3382, -121.8863, true, 'San Jose-Sunnyvale-Santa Clara, CA'],
+      ['los-angeles-ca', 'Los Angeles', 'CA', '06037', 3898747, 469, 34.0522, -118.2437, true, 'Los Angeles-Long Beach-Anaheim, CA'],
       ['austin-tx', 'Austin', 'TX', '48453', 974447, 297, 30.2672, -97.7431, true, 'Austin-Round Rock, TX'],
       ['seattle-wa', 'Seattle', 'WA', '53033', 753675, 83, 47.6062, -122.3321, true, 'Seattle-Tacoma-Bellevue, WA'],
       ['chicago-il', 'Chicago', 'IL', '17031', 2746388, 234, 41.8781, -87.6298, true, 'Chicago-Naperville-Elgin, IL-IN-WI'],
       ['miami-fl', 'Miami', 'FL', '12086', 467963, 36, 25.7617, -80.1918, true, 'Miami-Fort Lauderdale-Pompano Beach, FL'],
       ['washington-dc', 'Washington', 'DC', '11001', 689545, 61, 38.9072, -77.0369, true, 'Washington-Arlington-Alexandria, DC-VA-MD-WV'],
-      ['los-angeles-ca', 'Los Angeles', 'CA', '06037', 3898747, 469, 34.0522, -118.2437, true, 'Los Angeles-Long Beach-Anaheim, CA'],
+      ['san-jose-ca', 'San Jose', 'CA', '06085', 1021795, 178, 37.3382, -121.8863, true, 'San Jose-Sunnyvale-Santa Clara, CA'],
+      ['palo-alto-ca', 'Palo Alto', 'CA', '06085', 66666, 10, 37.4419, -122.1430, true, 'San Jose-Sunnyvale-Santa Clara, CA'],
+      ['menlo-park-ca', 'Menlo Park', 'CA', '06085', 33880, 10, 37.4529, -122.1817, true, 'San Jose-Sunnyvale-Santa Clara, CA'],
       ['dallas-tx', 'Dallas', 'TX', '48113', 1343573, 342, 32.7767, -96.7970, true, 'Dallas-Fort Worth-Arlington, TX'],
       ['atlanta-ga', 'Atlanta', 'GA', '13121', 498715, 134, 33.7490, -84.3880, true, 'Atlanta-Sandy Springs-Alpharetta, GA'],
-      
-      // TIER 2: High-Value Business Centers
-      ['denver-co', 'Denver', 'CO', '08031', 715522, 154, 39.7392, -104.9903, true, 'Denver-Aurora-Lakewood, CO'],
-      ['charlotte-nc', 'Charlotte', 'NC', '37119', 874579, 298, 35.2271, -80.8431, true, 'Charlotte-Concord-Gastonia, NC-SC'],
-      ['raleigh-nc', 'Raleigh', 'NC', '37183', 474069, 144, 35.7796, -78.6382, true, 'Raleigh-Cary, NC'],
-      ['nashville-tn', 'Nashville', 'TN', '47117', 689447, 474, 36.1627, -86.7816, true, 'Nashville-Davidson-Murfreesboro-Franklin, TN'],
-      ['minneapolis-mn', 'Minneapolis', 'MN', '27053', 429954, 55, 44.9778, -93.2650, true, 'Minneapolis-St. Paul-Bloomington, MN-WI'],
-      ['salt-lake-city-ut', 'Salt Lake City', 'UT', '49035', 199723, 109, 40.7608, -111.8910, true, 'Salt Lake City, UT'],
-      ['portland-or', 'Portland', 'OR', '41051', 652503, 145, 45.5152, -122.6784, true, 'Portland-Vancouver-Hillsboro, OR-WA'],
-      ['phoenix-az', 'Phoenix', 'AZ', '04013', 1680992, 517, 33.4484, -112.0740, true, 'Phoenix-Mesa-Scottsdale, AZ'],
-      ['san-diego-ca', 'San Diego', 'CA', '06073', 1386932, 325, 32.7157, -117.1611, true, 'San Diego-Chula Vista-Carlsbad, CA'],
-      ['houston-tx', 'Houston', 'TX', '48201', 2320268, 599, 29.7604, -95.3698, true, 'Houston-The Woodlands-Sugar Land, TX'],
-      
-      // TIER 3: Financial & Tech Suburbs
-      ['irvine-ca', 'Irvine', 'CA', '06059', 307670, 66, 33.6846, -117.8265, true, 'Los Angeles-Long Beach-Anaheim, CA'],
-      ['plano-tx', 'Plano', 'TX', '48113', 288061, 72, 33.0198, -96.6989, true, 'Dallas-Fort Worth-Arlington, TX'],
-      ['stamford-ct', 'Stamford', 'CT', '09001', 135470, 37, 41.0534, -73.5387, true, 'New York-Newark-Jersey City, NY-NJ-PA'],
-      ['jersey-city-nj', 'Jersey City', 'NJ', '34017', 292449, 15, 40.7178, -74.0431, true, 'New York-Newark-Jersey City, NY-NJ-PA'],
-      ['arlington-va', 'Arlington', 'VA', '51013', 239528, 26, 38.8805, -77.1085, true, 'Washington-Arlington-Alexandria, DC-VA-MD-WV'],
-      ['alexandria-va', 'Alexandria', 'VA', '51003', 159467, 15, 38.8048, -77.0469, true, 'Washington-Arlington-Alexandria, DC-VA-MD-WV'],
-      ['bethesda-md', 'Bethesda', 'MD', '24031', 68576, 9, 38.9807, -77.1027, true, 'Washington-Arlington-Alexandria, DC-VA-MD-WV'],
-      ['redmond-wa', 'Redmond', 'WA', '53033', 72674, 17, 47.6740, -122.1215, true, 'Seattle-Tacoma-Bellevue, WA'],
-      ['bellevue-wa', 'Bellevue', 'WA', '53033', 149810, 37, 47.6104, -122.2007, true, 'Seattle-Tacoma-Bellevue, WA'],
-      
-      // TIER 4: Secondary Business Cities (State coverage)
-      ['philadelphia-pa', 'Philadelphia', 'PA', '42101', 1603697, 134, 39.9526, -75.1652, true, 'Philadelphia-Camden-Wilmington, PA-NJ-DE-MD'],
-      ['columbus-oh', 'Columbus', 'OH', '39049', 905748, 217, 39.9612, -82.9988, true, 'Columbus, OH'],
-      ['indianapolis-in', 'Indianapolis', 'IN', '18097', 887642, 361, 39.7684, -86.1581, true, 'Indianapolis-Carmel-Anderson, IN'],
-      ['san-antonio-tx', 'San Antonio', 'TX', '48129', 1547253, 465, 29.4241, -98.4936, true, 'San Antonio-New Braunfels, TX'],
-      ['jacksonville-fl', 'Jacksonville', 'FL', '12031', 849491, 758, 30.3322, -81.6557, true, 'Jacksonville, FL'],
-      ['baltimore-md', 'Baltimore', 'MD', '24510', 585708, 80, 39.2904, -76.6122, true, 'Baltimore-Columbia-Towson, MD'],
-      ['detroit-mi', 'Detroit', 'MI', '26163', 670031, 138, 42.3314, -83.0458, true, 'Detroit-Warren-Dearborn, MI'],
-      ['louisville-ky', 'Louisville', 'KY', '21111', 633045, 325, 38.2527, -85.7585, true, 'Louisville/Jefferson County, KY-IN'],
-      ['milwaukee-wi', 'Milwaukee', 'WI', '55079', 569164, 96, 43.0389, -87.9065, true, 'Milwaukee-Waukesha, WI'],
-      ['oklahoma-city-ok', 'Oklahoma City', 'OK', '40109', 681034, 607, 35.4676, -97.5164, true, 'Oklahoma City, OK'],
-      ['las-vegas-nv', 'Las Vegas', 'NV', '32003', 651319, 141, 36.1699, -115.1398, true, 'Las Vegas-Henderson-Paradise, NV'],
-      ['kansas-city-mo', 'Kansas City', 'MO', '29145', 491918, 315, 39.0997, -94.5786, true, 'Kansas City, MO-KS'],
-      ['memphis-tn', 'Memphis', 'TN', '47157', 628127, 293, 35.1495, -90.0490, true, 'Memphis, TN-MS-AR'],
-      ['omaha-ne', 'Omaha', 'NE', '31055', 486051, 133, 41.2565, -95.9345, true, 'Omaha-Council Bluffs, NE-IA'],
-      ['new-orleans-la', 'New Orleans', 'LA', '22071', 390144, 169, 29.9511, -90.0715, true, 'New Orleans-Metairie, LA'],
-      
-      // TIER 5: Remaining State Capitals and Major Cities
-      ['birmingham-al', 'Birmingham', 'AL', '01073', 212237, 146, 33.5207, -86.8025, true, 'Birmingham-Hoover, AL'],
-      ['anchorage-ak', 'Anchorage', 'AK', '02020', 291826, 1700, 61.2181, -149.9003, true, 'Anchorage, AK'],
-      ['little-rock-ar', 'Little Rock', 'AR', '05119', 202591, 116, 34.7465, -92.2896, true, 'Little Rock-North Little Rock-Conway, AR'],
-      ['hartford-ct', 'Hartford', 'CT', '09003', 121054, 18, 41.7658, -72.6734, true, 'Hartford-East Hartford-Middletown, CT'],
-      ['dover-de', 'Dover', 'DE', '10001', 37879, 23, 39.1619, -75.5264, true, 'Dover, DE'],
-      ['honolulu-hi', 'Honolulu', 'HI', '15003', 345194, 60, 21.3099, -157.8581, true, 'Urban Honolulu, HI'],
-      ['boise-id', 'Boise', 'ID', '16001', 235684, 80, 43.6150, -116.2023, true, 'Boise City, ID'],
-      ['des-moines-ia', 'Des Moines', 'IA', '19153', 214770, 85, 41.6005, -93.6091, true, 'Des Moines-West Des Moines, IA'],
-      ['wichita-ks', 'Wichita', 'KS', '20173', 390566, 163, 37.6872, -97.3301, true, 'Wichita, KS'],
-      ['portland-me', 'Portland', 'ME', '23025', 68308, 29, 43.6591, -70.2568, true, 'Portland-South Portland, ME'],
-      ['jackson-ms', 'Jackson', 'MS', '28049', 147420, 111, 32.2988, -90.1848, true, 'Jackson, MS'],
-      ['billings-mt', 'Billings', 'MT', '30011', 117445, 44, 45.7833, -108.5007, true, 'Billings, MT'],
-      ['manchester-nh', 'Manchester', 'NH', '33013', 115644, 34, 42.9956, -71.4447, true, 'Manchester-Nashua, NH'],
-      ['newark-nj', 'Newark', 'NJ', '34013', 277140, 26, 40.7357, -74.1724, true, 'New York-Newark-Jersey City, NY-NJ-PA'],
-      ['albuquerque-nm', 'Albuquerque', 'NM', '35001', 564559, 180, 35.0844, -106.6504, true, 'Albuquerque, NM'],
-      ['fargo-nd', 'Fargo', 'ND', '38029', 125990, 48, 46.8772, -96.7898, true, 'Fargo, ND-MN'],
-      ['providence-ri', 'Providence', 'RI', '44007', 190956, 18, 41.8240, -71.4128, true, 'Providence-Warwick, RI-MA'],
-      ['charleston-sc', 'Charleston', 'SC', '45029', 150227, 127, 32.7765, -79.9311, true, 'Charleston-North Charleston, SC'],
-      ['sioux-falls-sd', 'Sioux Falls', 'SD', '46099', 179674, 73, 43.5446, -96.7311, true, 'Sioux Falls, SD'],
-      ['burlington-vt', 'Burlington', 'VT', '50013', 44953, 10, 44.4759, -73.2121, true, 'Burlington, VT'],
-      ['virginia-beach-va', 'Virginia Beach', 'VA', '51710', 459511, 249, 36.8529, -75.9780, true, 'Virginia Beach-Norfolk-Newport News, VA-NC'],
-      ['charleston-wv', 'Charleston', 'WV', '54019', 46510, 31, 38.3498, -81.6326, true, 'Charleston, WV'],
-      ['cheyenne-wy', 'Cheyenne', 'WY', '56025', 65248, 24, 41.1390, -104.8202, true, 'Cheyenne, WY'],
+      ['greenwich-ct', 'Greenwich', 'CT', '09001', 62976, 48, 41.0262, -73.6280, true, 'New York-Newark-Jersey City, NY-NJ-PA'],
     ];
 
     for (const [id, name, state, county, population, area, latitude, longitude, isMetro, metroArea] of cityData) {
@@ -310,93 +230,113 @@ export class GeographyDataLoader {
   }
 
   // Generator function for ZIP codes - memory efficient
+  // PRIORITIZED: Financial district ZIP codes for 15 top investment hubs
   private *generateZipCodes(): Generator<ZipCode> {
     const zipData: Array<[string, string, string, string, number, number, number, number]> = [
-      ['90210', 'Beverly Hills', 'CA', '06037', 34.0736, -118.4004, 22101, 5.5],
-      ['10001', 'New York', 'NY', '36061', 40.7505, -73.9934, 35345, 0.9],
-      ['60601', 'Chicago', 'IL', '17031', 41.8827, -87.6233, 15234, 0.6],
-      ['77001', 'Houston', 'TX', '48201', 29.7604, -95.3698, 28456, 1.2],
-      ['85001', 'Phoenix', 'AZ', '04013', 33.4484, -112.0740, 19876, 1.0],
-      ['19101', 'Philadelphia', 'PA', '42101', 39.9526, -75.1652, 12543, 0.8],
-      ['33101', 'Miami', 'FL', '12086', 25.7617, -80.1918, 16892, 1.1],
-      ['94101', 'San Francisco', 'CA', '06075', 37.7749, -122.4194, 24567, 0.7],
-      ['98101', 'Seattle', 'WA', '53033', 47.6062, -122.3321, 21345, 0.9],
-      ['02101', 'Boston', 'MA', '25025', 42.3601, -71.0589, 18765, 0.6],
-      // Add more ZIP codes for all the cities
-      ['35201', 'Birmingham', 'AL', '01073', 33.5207, -86.8025, 12456, 1.5],
-      ['99501', 'Anchorage', 'AK', '02020', 61.2181, -149.9003, 8234, 2.0],
-      ['72201', 'Little Rock', 'AR', '05119', 34.7465, -92.2896, 9876, 1.2],
-      ['80201', 'Denver', 'CO', '08031', 39.7392, -104.9903, 15678, 1.8],
-      ['06101', 'Hartford', 'CT', '09003', 41.7658, -72.6734, 7654, 0.8],
-      ['19901', 'Dover', 'DE', '10001', 39.1619, -75.5264, 4321, 0.6],
-      ['32201', 'Jacksonville', 'FL', '12031', 30.3322, -81.6557, 21345, 2.1],
-      ['30301', 'Atlanta', 'GA', '13121', 33.7490, -84.3880, 18765, 1.6],
-      ['96801', 'Honolulu', 'HI', '15003', 21.3099, -157.8581, 14321, 1.1],
-      ['83701', 'Boise', 'ID', '16001', 43.6150, -116.2023, 10987, 1.3],
-      ['46201', 'Indianapolis', 'IN', '18097', 39.7684, -86.1581, 16543, 1.9],
-      ['50301', 'Des Moines', 'IA', '19153', 41.6005, -93.6091, 8765, 1.0],
-      ['67201', 'Wichita', 'KS', '20173', 37.6872, -97.3301, 11234, 1.4],
-      ['40201', 'Louisville', 'KY', '21111', 38.2527, -85.7585, 14567, 1.7],
-      ['70101', 'New Orleans', 'LA', '22071', 29.9511, -90.0715, 13245, 1.3],
-      ['04101', 'Portland', 'ME', '23025', 43.6591, -70.2568, 6543, 0.7],
-      ['21201', 'Baltimore', 'MD', '24510', 39.2904, -76.6122, 17890, 1.1],
-      ['02108', 'Boston', 'MA', '25025', 42.3601, -71.0589, 14567, 0.8],
-      ['48201', 'Detroit', 'MI', '26163', 42.3314, -83.0458, 16789, 1.4],
-      ['55401', 'Minneapolis', 'MN', '27053', 44.9778, -93.2650, 12345, 1.2],
-      ['39201', 'Jackson', 'MS', '28049', 32.2988, -90.1848, 7654, 1.1],
-      ['64101', 'Kansas City', 'MO', '29145', 39.0997, -94.5786, 14321, 1.5],
-      ['59101', 'Billings', 'MT', '30011', 45.7833, -108.5007, 8765, 1.8],
-      ['68101', 'Omaha', 'NE', '31055', 41.2565, -95.9345, 13456, 1.6],
-      ['89101', 'Las Vegas', 'NV', '32003', 36.1699, -115.1398, 19876, 1.9],
-      ['03101', 'Manchester', 'NH', '33013', 42.9956, -71.4447, 6543, 0.9],
-      ['07101', 'Newark', 'NJ', '34013', 40.7357, -74.1724, 11234, 1.0],
-      ['87101', 'Albuquerque', 'NM', '35001', 35.0844, -106.6504, 15678, 1.8],
-      ['28201', 'Charlotte', 'NC', '37119', 35.2271, -80.8431, 18765, 2.0],
-      ['58101', 'Fargo', 'ND', '38029', 46.8772, -96.7898, 7654, 1.1],
-      ['43201', 'Columbus', 'OH', '39049', 39.9612, -82.9988, 16789, 1.7],
-      ['73101', 'Oklahoma City', 'OK', '40109', 35.4676, -97.5164, 14567, 1.5],
-      ['97201', 'Portland', 'OR', '41051', 45.5152, -122.6784, 16789, 1.6],
-      ['02901', 'Providence', 'RI', '44007', 41.8240, -71.4128, 7654, 0.8],
-      ['29401', 'Charleston', 'SC', '45029', 32.7765, -79.9311, 9876, 1.3],
-      ['57101', 'Sioux Falls', 'SD', '46099', 43.5446, -96.7311, 10987, 1.2],
-      ['38101', 'Memphis', 'TN', '47157', 35.1495, -90.0490, 14321, 1.6],
-      ['78701', 'Austin', 'TX', '48453', 30.2672, -97.7431, 17890, 1.8],
-      ['84101', 'Salt Lake City', 'UT', '49035', 40.7608, -111.8910, 11234, 1.4],
-      ['05401', 'Burlington', 'VT', '50013', 44.4759, -73.2121, 5432, 0.6],
-      ['23451', 'Virginia Beach', 'VA', '51710', 36.8529, -75.9780, 15678, 2.2],
-      ['98101', 'Seattle', 'WA', '53033', 47.6062, -122.3321, 21345, 1.2],
-      ['25301', 'Charleston', 'WV', '54019', 38.3498, -81.6326, 4321, 0.8],
-      ['53201', 'Milwaukee', 'WI', '55079', 43.0389, -87.9065, 13456, 1.1],
-      ['82001', 'Cheyenne', 'WY', '56025', 41.1390, -104.8202, 6543, 1.4],
-      ['20001', 'Washington', 'DC', '11001', 38.9072, -77.0369, 16789, 1.3],
-      // ZIP codes for additional high-business-activity cities
-      ['94102', 'San Francisco', 'CA', '06075', 37.7749, -122.4194, 24567, 0.8],
-      ['02101', 'Boston', 'MA', '25025', 42.3601, -71.0589, 18765, 0.6],
-      ['98101', 'Seattle', 'WA', '53033', 47.6062, -122.3321, 21345, 0.9],
-      ['27601', 'Raleigh', 'NC', '37183', 35.7796, -78.6382, 12456, 1.2],
-      ['55401', 'Minneapolis', 'MN', '27053', 44.9778, -93.2650, 12345, 1.2],
-      ['37201', 'Nashville', 'TN', '47117', 36.1627, -86.7816, 14567, 1.4],
-      ['97201', 'Portland', 'OR', '41051', 45.5152, -122.6784, 16789, 1.6],
-      ['84101', 'Salt Lake City', 'UT', '49035', 40.7608, -111.8910, 11234, 1.4],
-      ['28201', 'Charlotte', 'NC', '37119', 35.2271, -80.8431, 18765, 2.0],
-      ['78701', 'Austin', 'TX', '48453', 30.2672, -97.7431, 17890, 1.8],
-      ['33101', 'Miami', 'FL', '12086', 25.7617, -80.1918, 16892, 1.1],
-      ['75201', 'Dallas', 'TX', '48113', 32.7767, -96.7970, 15678, 1.4],
-      ['85001', 'Phoenix', 'AZ', '04013', 33.4484, -112.0740, 19876, 1.0],
-      ['95101', 'San Jose', 'CA', '06085', 37.3382, -121.8863, 14567, 1.2],
-      ['92618', 'Irvine', 'CA', '06059', 33.6846, -117.8265, 8765, 0.9],
-      ['75074', 'Plano', 'TX', '48113', 33.0198, -96.6989, 6543, 0.8],
-      ['06901', 'Stamford', 'CT', '09001', 41.0534, -73.5387, 7654, 0.7],
-      ['07302', 'Jersey City', 'NJ', '34017', 40.7178, -74.0431, 8765, 0.6],
-      ['22201', 'Arlington', 'VA', '51013', 38.8805, -77.1085, 9876, 0.5],
-      ['22301', 'Alexandria', 'VA', '51003', 38.8048, -77.0469, 7654, 0.4],
-      ['20814', 'Bethesda', 'MD', '24031', 38.9807, -77.1027, 5432, 0.3],
-      ['94301', 'Palo Alto', 'CA', '06085', 37.4419, -122.1430, 4321, 0.2],
-      ['94025', 'Menlo Park', 'CA', '06085', 37.4529, -122.1817, 3210, 0.2],
-      ['94043', 'Mountain View', 'CA', '06085', 37.3861, -122.0839, 6543, 0.3],
-      ['94086', 'Sunnyvale', 'CA', '06085', 37.3688, -122.0363, 8765, 0.4],
-      ['98052', 'Redmond', 'WA', '53033', 47.6740, -122.1215, 4321, 0.3],
-      ['98004', 'Bellevue', 'WA', '53033', 47.6104, -122.2007, 6543, 0.5],
+      // New York City: Midtown, Flatiron, Financial District
+      ['10016', 'New York', 'NY', '36061', 40.7439, -73.9883, 45000, 0.4], // Midtown
+      ['10010', 'New York', 'NY', '36061', 40.7426, -73.9909, 38000, 0.3], // Flatiron
+      ['10004', 'New York', 'NY', '36061', 40.7024, -74.0119, 32000, 0.5], // Financial District
+      ['10017', 'New York', 'NY', '36061', 40.7552, -73.9734, 41000, 0.4], // Midtown East
+      ['10022', 'New York', 'NY', '36061', 40.7587, -73.9670, 39000, 0.4], // Midtown
+      
+      // San Francisco: Financial District, SoMa
+      ['94104', 'San Francisco', 'CA', '06075', 37.7949, -122.3930, 28000, 0.6], // Financial District
+      ['94105', 'San Francisco', 'CA', '06075', 37.7905, -122.3920, 26000, 0.5], // Financial District
+      ['94107', 'San Francisco', 'CA', '06075', 37.7705, -122.4010, 32000, 0.8], // SoMa
+      ['94103', 'San Francisco', 'CA', '06075', 37.7685, -122.4020, 35000, 0.9], // SoMa
+      ['94111', 'San Francisco', 'CA', '06075', 37.7950, -122.4000, 24000, 0.4], // Financial District
+      
+      // Boston: Back Bay, Financial District
+      ['02116', 'Boston', 'MA', '25025', 42.3504, -71.0765, 29000, 0.6], // Back Bay
+      ['02108', 'Boston', 'MA', '25025', 42.3590, -71.0580, 24000, 0.5], // Financial District
+      ['02110', 'Boston', 'MA', '25025', 42.3570, -71.0550, 22000, 0.4], // Financial District
+      ['02199', 'Boston', 'MA', '25025', 42.3510, -71.0700, 18000, 0.3], // Back Bay
+      ['02111', 'Boston', 'MA', '25025', 42.3550, -71.0600, 26000, 0.5], // Financial District
+      
+      // Los Angeles: Century City, Beverly Hills
+      ['90067', 'Los Angeles', 'CA', '06037', 34.0539, -118.4000, 22000, 0.7], // Century City
+      ['90210', 'Beverly Hills', 'CA', '06037', 34.0736, -118.4004, 21000, 0.5], // Beverly Hills
+      ['90024', 'Los Angeles', 'CA', '06037', 34.0600, -118.4400, 32000, 0.8], // Westwood
+      ['90025', 'Los Angeles', 'CA', '06037', 34.0500, -118.4600, 28000, 0.7], // West LA
+      ['90049', 'Los Angeles', 'CA', '06037', 34.0450, -118.4800, 24000, 0.6], // Brentwood
+      
+      // Austin: Downtown, The Domain
+      ['78701', 'Austin', 'TX', '48453', 30.2672, -97.7431, 32000, 0.8], // Downtown
+      ['78705', 'Austin', 'TX', '48453', 30.2900, -97.7400, 28000, 0.7], // University area
+      ['78759', 'Austin', 'TX', '48453', 30.3600, -97.7200, 35000, 0.9], // The Domain
+      ['78746', 'Austin', 'TX', '48453', 30.2200, -97.8200, 26000, 0.6], // Southwest
+      ['78703', 'Austin', 'TX', '48453', 30.2800, -97.7700, 29000, 0.7], // Tarrytown
+      
+      // Seattle: Downtown, South Lake Union
+      ['98101', 'Seattle', 'WA', '53033', 47.6062, -122.3321, 34000, 0.6], // Downtown
+      ['98109', 'Seattle', 'WA', '53033', 47.6200, -122.3500, 31000, 0.5], // South Lake Union
+      ['98121', 'Seattle', 'WA', '53033', 47.6150, -122.3400, 28000, 0.5], // Belltown
+      ['98104', 'Seattle', 'WA', '53033', 47.6000, -122.3300, 26000, 0.6], // Pioneer Square
+      ['98119', 'Seattle', 'WA', '53033', 47.6300, -122.3600, 24000, 0.5], // Queen Anne
+      
+      // Chicago: The Loop, River North
+      ['60601', 'Chicago', 'IL', '17031', 41.8827, -87.6233, 36000, 0.5], // The Loop
+      ['60611', 'Chicago', 'IL', '17031', 41.8900, -87.6200, 32000, 0.4], // Streeterville
+      ['60610', 'Chicago', 'IL', '17031', 41.9100, -87.6300, 29000, 0.5], // Lincoln Park
+      ['60654', 'Chicago', 'IL', '17031', 41.8900, -87.6500, 27000, 0.4], // River North
+      ['60603', 'Chicago', 'IL', '17031', 41.8800, -87.6300, 25000, 0.4], // The Loop
+      
+      // Miami: Brickell
+      ['33131', 'Miami', 'FL', '12086', 25.7617, -80.1918, 28000, 0.5], // Brickell
+      ['33132', 'Miami', 'FL', '12086', 25.7700, -80.1900, 26000, 0.4], // Downtown
+      ['33130', 'Miami', 'FL', '12086', 25.7500, -80.2000, 24000, 0.5], // Little Havana
+      ['33129', 'Miami', 'FL', '12086', 25.7400, -80.2100, 22000, 0.4], // Coconut Grove
+      ['33133', 'Miami', 'FL', '12086', 25.7300, -80.2200, 20000, 0.5], // Coral Gables
+      
+      // Washington DC: Downtown, Georgetown
+      ['20001', 'Washington', 'DC', '11001', 38.9072, -77.0369, 32000, 0.6], // Downtown
+      ['20005', 'Washington', 'DC', '11001', 38.9000, -77.0200, 29000, 0.5], // Mount Vernon Square
+      ['20037', 'Washington', 'DC', '11001', 38.9000, -77.0500, 27000, 0.4], // Georgetown
+      ['20006', 'Washington', 'DC', '11001', 38.9100, -77.0400, 25000, 0.4], // Foggy Bottom
+      ['20036', 'Washington', 'DC', '11001', 38.9050, -77.0300, 28000, 0.5], // Farragut Square
+      
+      // San Jose: Downtown
+      ['95113', 'San Jose', 'CA', '06085', 37.3382, -121.8863, 26000, 0.6], // Downtown
+      ['95112', 'San Jose', 'CA', '06085', 37.3300, -121.8600, 28000, 0.7], // East San Jose
+      ['95110', 'San Jose', 'CA', '06085', 37.3200, -121.8500, 24000, 0.6], // South San Jose
+      ['95126', 'San Jose', 'CA', '06085', 37.3100, -121.9300, 22000, 0.5], // Willow Glen
+      ['95125', 'San Jose', 'CA', '06085', 37.3000, -121.9200, 20000, 0.5], // Almaden
+      
+      // Palo Alto: Sand Hill Road, Downtown Palo Alto
+      ['94304', 'Palo Alto', 'CA', '06085', 37.4419, -122.1430, 18000, 0.3], // Sand Hill Road area
+      ['94301', 'Palo Alto', 'CA', '06085', 37.4419, -122.1430, 16000, 0.2], // Downtown Palo Alto
+      ['94306', 'Palo Alto', 'CA', '06085', 37.4200, -122.1500, 14000, 0.2], // South Palo Alto
+      ['94303', 'Palo Alto', 'CA', '06085', 37.4000, -122.1300, 12000, 0.2], // East Palo Alto
+      ['94305', 'Palo Alto', 'CA', '06085', 37.4300, -122.1600, 10000, 0.2], // Stanford area
+      
+      // Menlo Park: Sand Hill Road, Downtown Menlo Park
+      ['94025', 'Menlo Park', 'CA', '06085', 37.4529, -122.1817, 12000, 0.2], // Downtown Menlo Park
+      ['94027', 'Menlo Park', 'CA', '06085', 37.4600, -122.1800, 10000, 0.2], // Sand Hill Road
+      ['94026', 'Menlo Park', 'CA', '06085', 37.4400, -122.1700, 8000, 0.2], // West Menlo Park
+      ['94028', 'Menlo Park', 'CA', '06085', 37.4500, -122.1900, 6000, 0.2], // Sharon Heights
+      ['94065', 'Menlo Park', 'CA', '06085', 37.4700, -122.2000, 4000, 0.2], // Ravenswood
+      
+      // Dallas: Uptown, Downtown
+      ['75201', 'Dallas', 'TX', '48113', 32.7767, -96.7970, 34000, 0.5], // Downtown
+      ['75219', 'Dallas', 'TX', '48113', 32.8000, -96.8100, 32000, 0.4], // Uptown
+      ['75204', 'Dallas', 'TX', '48113', 32.7800, -96.7900, 30000, 0.4], // Deep Ellum
+      ['75202', 'Dallas', 'TX', '48113', 32.7700, -96.8000, 28000, 0.4], // Main Street District
+      ['75206', 'Dallas', 'TX', '48113', 32.8200, -96.7700, 26000, 0.5], // Lakewood
+      
+      // Atlanta: Buckhead
+      ['30305', 'Atlanta', 'GA', '13121', 33.8400, -84.3800, 28000, 0.5], // Buckhead
+      ['30326', 'Atlanta', 'GA', '13121', 33.8300, -84.3700, 26000, 0.4], // Buckhead
+      ['30309', 'Atlanta', 'GA', '13121', 33.8100, -84.3600, 24000, 0.4], // Midtown
+      ['30303', 'Atlanta', 'GA', '13121', 33.7500, -84.3900, 22000, 0.5], // Downtown
+      ['30324', 'Atlanta', 'GA', '13121', 33.8200, -84.3500, 20000, 0.4], // Morningside
+      
+      // Greenwich CT: Downtown Greenwich
+      ['06830', 'Greenwich', 'CT', '09001', 41.0262, -73.6280, 12000, 0.4], // Downtown Greenwich
+      ['06831', 'Greenwich', 'CT', '09001', 41.0300, -73.6400, 10000, 0.3], // Riverside
+      ['06870', 'Greenwich', 'CT', '09001', 41.0200, -73.6200, 8000, 0.3], // Old Greenwich
+      ['06878', 'Greenwich', 'CT', '09001', 41.0400, -73.6500, 6000, 0.3], // Cos Cob
+      ['06807', 'Greenwich', 'CT', '09001', 41.0100, -73.6100, 4000, 0.3], // Byram
     ];
 
     for (const [zip, city, state, county, latitude, longitude, population, area] of zipData) {
@@ -415,28 +355,22 @@ export class GeographyDataLoader {
   // Generator function for metro areas - memory efficient
   private *generateMetroAreas(): Generator<MetroArea> {
     const metroData: Array<[string, string, number, string, string]> = [
+      // Metro areas for 15 top investment hubs
       ['New York-Newark-Jersey City, NY-NJ-PA', '35620', 19267207, 'New York', 'NY'],
-      ['Los Angeles-Long Beach-Anaheim, CA', '31080', 13246003, 'Los Angeles', 'CA'],
-      ['Chicago-Naperville-Elgin, IL-IN-WI', '16974', 9512999, 'Chicago', 'IL'],
-      ['Dallas-Fort Worth-Arlington, TX', '19124', 7846293, 'Dallas', 'TX'],
-      ['Houston-The Woodlands-Sugar Land, TX', '26420', 7412806, 'Houston', 'TX'],
-      ['Washington-Arlington-Alexandria, DC-VA-MD-WV', '47900', 6680934, 'Washington', 'DC'],
-      ['Miami-Fort Lauderdale-Pompano Beach, FL', '33124', 6137982, 'Miami', 'FL'],
-      ['Philadelphia-Camden-Wilmington, PA-NJ-DE-MD', '37964', 6096372, 'Philadelphia', 'PA'],
-      ['Atlanta-Sandy Springs-Alpharetta, GA', '12060', 6107351, 'Atlanta', 'GA'],
-      ['Phoenix-Mesa-Scottsdale, AZ', '38060', 4929024, 'Phoenix', 'AZ'],
       ['San Francisco-Oakland-Hayward, CA', '41860', 4758614, 'San Francisco', 'CA'],
       ['Boston-Cambridge-Newton, MA-NH', '14460', 4853158, 'Boston', 'MA'],
-      ['Seattle-Tacoma-Bellevue, WA', '42660', 4103494, 'Seattle', 'WA'],
-      ['Raleigh-Cary, NC', '39580', 1423438, 'Raleigh', 'NC'],
-      ['Minneapolis-St. Paul-Bloomington, MN-WI', '33460', 3551219, 'Minneapolis', 'MN'],
-      ['Nashville-Davidson-Murfreesboro-Franklin, TN', '34980', 1969608, 'Nashville', 'TN'],
-      ['Portland-Vancouver-Hillsboro, OR-WA', '38900', 2517859, 'Portland', 'OR'],
-      ['Salt Lake City, UT', '41620', 1265970, 'Salt Lake City', 'UT'],
-      ['Charlotte-Concord-Gastonia, NC-SC', '16740', 2914246, 'Charlotte', 'NC'],
+      ['Los Angeles-Long Beach-Anaheim, CA', '31080', 13246003, 'Los Angeles', 'CA'],
       ['Austin-Round Rock, TX', '12420', 2291194, 'Austin', 'TX'],
+      ['Seattle-Tacoma-Bellevue, WA', '42660', 4103494, 'Seattle', 'WA'],
+      ['Chicago-Naperville-Elgin, IL-IN-WI', '16974', 9512999, 'Chicago', 'IL'],
       ['Miami-Fort Lauderdale-Pompano Beach, FL', '33124', 6137982, 'Miami', 'FL'],
+      ['Washington-Arlington-Alexandria, DC-VA-MD-WV', '47900', 6680934, 'Washington', 'DC'],
       ['San Jose-Sunnyvale-Santa Clara, CA', '41940', 2021426, 'San Jose', 'CA'],
+      ['San Jose-Sunnyvale-Santa Clara, CA', '41940', 2021426, 'Palo Alto', 'CA'],
+      ['San Jose-Sunnyvale-Santa Clara, CA', '41940', 2021426, 'Menlo Park', 'CA'],
+      ['Dallas-Fort Worth-Arlington, TX', '19124', 7846293, 'Dallas', 'TX'],
+      ['Atlanta-Sandy Springs-Alpharetta, GA', '12060', 6107351, 'Atlanta', 'GA'],
+      ['New York-Newark-Jersey City, NY-NJ-PA', '35620', 19267207, 'Greenwich', 'CT'],
     ];
 
     for (const [name, fips, population, principalCity, state] of metroData) {

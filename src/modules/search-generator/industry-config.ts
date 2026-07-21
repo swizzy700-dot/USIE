@@ -267,8 +267,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -294,8 +294,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -321,8 +321,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -337,9 +337,9 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
     ],
     excludeTerms: ['diy', 'tutorial', 'how to', 'financial advisor', 'wealth management', 'retirement', 'brokerage', 'insurance', 'wealth manager', 'financial planner', 'investment adviser']
   },
-  'enterprise-software-investors': {
-    id: 'enterprise-software-investors',
-    name: 'Enterprise Software Investors',
+  'enterprise-software-venture-capital': {
+    id: 'enterprise-software-venture-capital',
+    name: 'Enterprise Software Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -348,8 +348,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -366,7 +366,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'saas-investors': {
     id: 'saas-investors',
-    name: 'SaaS Investors',
+    name: 'SaaS Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -375,8 +375,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -393,7 +393,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'artificial-intelligence-investors': {
     id: 'artificial-intelligence-investors',
-    name: 'Artificial Intelligence Investors',
+    name: 'AI Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -402,8 +402,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -420,7 +420,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'machine-learning-investors': {
     id: 'machine-learning-investors',
-    name: 'Machine Learning Investors',
+    name: 'Machine Learning Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -429,8 +429,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -447,7 +447,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'data-infrastructure-investors': {
     id: 'data-infrastructure-investors',
-    name: 'Data Infrastructure Investors',
+    name: 'Data Infrastructure Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -456,8 +456,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -474,7 +474,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'cloud-computing-investors': {
     id: 'cloud-computing-investors',
-    name: 'Cloud Computing Investors',
+    name: 'Cloud Computing Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -483,8 +483,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -501,7 +501,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'developer-tools-investors': {
     id: 'developer-tools-investors',
-    name: 'Developer Tools Investors',
+    name: 'Developer Tools Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -510,8 +510,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -528,7 +528,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'seed-investors': {
     id: 'seed-investors',
-    name: 'Seed Investors',
+    name: 'Seed Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -537,8 +537,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -555,7 +555,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'early-stage-investors': {
     id: 'early-stage-investors',
-    name: 'Early-Stage Investors',
+    name: 'Early-Stage Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -564,8 +564,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -591,8 +591,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -618,8 +618,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -645,8 +645,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -672,8 +672,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -699,8 +699,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -726,8 +726,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -753,8 +753,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -771,7 +771,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'enterprise-ai-investors': {
     id: 'enterprise-ai-investors',
-    name: 'Enterprise AI Investors',
+    name: 'Enterprise AI Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -780,8 +780,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
@@ -798,7 +798,7 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
   },
   'cloud-software-investors': {
     id: 'cloud-software-investors',
-    name: 'Cloud Software Investors',
+    name: 'Cloud Software Venture Capital',
     searchTerms: [
       'Private Equity Firms',
       'Venture Capital Firms',
@@ -807,8 +807,8 @@ export const INDUSTRY_CONFIGS: Record<string, IndustryConfig> = {
       'Technology Venture Capital',
       'AI Venture Capital',
       'Software Venture Capital',
-      'Enterprise Software Investors',
-      'B2B Software Investors',
+      'Enterprise Software Venture Capital',
+      'B2B Software Venture Capital',
       'Growth Equity Firms'
     ],
     modifiers: [
